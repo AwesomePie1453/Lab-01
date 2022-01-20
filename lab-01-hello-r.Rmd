@@ -2,7 +2,11 @@
 title: "Lab 01 - Hello R"
 author: "Alexander Connolly"
 date: "1/20/2022"
-output: github_document
+output: 
+  html_document: 
+    fig_width: 9
+    fig_height: 7
+    highlight: haddock
 ---
 
 ## Load packages and data
@@ -22,12 +26,9 @@ datasaurus_dozen %>%
   print(13)
 ```
 
-
 ### Exercise 2
 
-First let's plot the data in the dino dataset:
-
-```{r plot-dino, fig.height=3, fig.width=6}
+```{r plot-dino, fig.height=5, fig.width=10}
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 
@@ -35,19 +36,12 @@ ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
 
-
 ```{r cor-dino}
 dino_data %>%
   summarize(r = cor(x, y))
 ```
 
 ### Exercise 3
-
-Add code and narrative as needed.
-Note that the R chunks are labeled with `plot-star` and `cor-star` to provide spaces to place the code for plotting and calculating the correlation coefficient.
-To finish, clean up the narrative by removing these instructions.
-
-
 
 ```{r plot-star}
 star_data <- datasaurus_dozen %>%
@@ -57,14 +51,12 @@ geom_point()
 
 ```
 
-
-
 ```{r cor-star}
 star_data %>%
 summarize(r=cor(x,y))
 ```
-R(star) = -.0629611 vs
-R(dino) = -.06447185
+
+R(star) = -.0629611 vs R(dino) = -.06447185
 
 They are almost the same!
 
@@ -81,8 +73,8 @@ ggplot(data=circle_data, mapping =aes(x=y, y=y)) +geom_point()
 circle_data %>%
   summarize(r=cor(x,y))
 ```
-r(circle) = -.06834336 vs
-r(dino) = -.06447185
+
+r(circle) = -.06834336 vs r(dino) = -.06447185
 
 They are almost the same!
 
@@ -95,7 +87,6 @@ ggplot(datasaurus_dozen, aes(x = x, y= y,color = dataset)) +
   theme(legend.position = "none")
 ```
 
-
 ```{r}
 datasaurus_dozen %>%
   group_by (dataset) %>%
@@ -103,4 +94,4 @@ datasaurus_dozen %>%
   print(13)
 ```
 
-
+Done :)
