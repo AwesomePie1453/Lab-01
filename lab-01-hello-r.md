@@ -1,7 +1,7 @@
 Lab 01 - Hello R
 ================
 Alexander Connolly
-Insert date here
+1/20/2022
 
 ## Load packages and data
 
@@ -14,7 +14,33 @@ library(datasauRus)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+``` r
+datasaurus_dozen %>%
+  count(dataset) %>%
+  print(13)
+```
+
+    ## # A tibble:
+    ## #   13 × 2
+    ##    dataset   
+    ##    <chr>     
+    ##  1 away      
+    ##  2 bullseye  
+    ##  3 circle    
+    ##  4 dino      
+    ##  5 dots      
+    ##  6 h_lines   
+    ##  7 high_lines
+    ##  8 slant_down
+    ##  9 slant_up  
+    ## 10 star      
+    ## 11 v_lines   
+    ## 12 wide_lines
+    ## 13 x_shape   
+    ## # … with 1
+    ## #   more
+    ## #   variable:
+    ## #   n <int>
 
 ### Exercise 2
 
